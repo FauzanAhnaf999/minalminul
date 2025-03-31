@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minal Minul - Jedag Jedug Edition</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Josefin Sans', sans-serif;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .greeting {
+            font-size: 24px;
+            font-weight: bold;
+            animation: blink 0.5s infinite alternate;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        .beat {
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 0 0 20px #ff00ff;
+            animation: beat 0.5s infinite alternate;
+        }
+        @keyframes beat {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="greeting" id="message">SELAMAT HARI RAYA IDUL FITRI 1446H!</div>
+    <div class="beat" id="beat">MINAL AIDIN WAL FAIZIN 🎶</div>
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-energy.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <footer class="footer">&copy; 2025 Made by <a href="https://www.linkedin.com/in/fauzanahnaf/" target="_blank" class="text-white">Fauzan Ahnaf</a></footer>
+    <script>
+        const beats = [
+            'aku👉minta😊maaf🙏jika👍aku🙇‍♀️ada😔salah✋',
+            'karena😉tidak🌼lama☘lagi🕯lebaran📚tiba👉',
+            'maka✋dari😊itu🌵aku👨‍🦳minta😊maaf🙏',
+            'saya👴takut😣kalau😌di🎊akhirat📜nanti💞saya😢di🎊siksa',
+           '👹karena🤔belum📌mendapatkan🌴maaf 🙏dari😊kalian👨‍👩‍👦',
+        ];
+        let index = 0;
+        setInterval(() => {
+            document.getElementById("beat").textContent = beats[index];
+            index = (index + 1) % beats.length;
+        }, 2000);
+    </script>
+</body>
+
+</html>
